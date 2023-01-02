@@ -1,0 +1,743 @@
+<html>
+
+<head>
+    <title></title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        /* Header styling start */
+
+        header {
+            background-color: #FFFFFF;
+            height: 60px;
+            width: 100%;
+            position: fixed;
+            top: 0px;
+            display: flex;
+
+            justify-content: space-around;
+            align-content: center;
+            z-index: 3;
+
+        }
+
+        header nav {
+            margin-top: 10px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            font-size: 15px;
+            color: rgb(54, 54, 54);
+        }
+
+        header nav ul li a:hover {
+            color: black;
+        }
+
+        header nav ul {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-column-gap: 35px;
+            list-style: none;
+        }
+
+        nav li img {
+            outline: 1px white solid;
+            border-radius: 50%;
+        }
+
+        .search {
+            margin-left: 20px;
+            padding-left: 70px;
+            padding-top: 5px;
+            display: grid;
+            grid-template-columns: repeat(2, 0.1fr);
+            justify-content: right;
+            align-content: center;
+            grid-gap: 5px;
+        }
+
+        #icon {
+            font-size: 40px;
+            align-self: bottom;
+        }
+
+        input {
+            margin-top: 2px;
+            padding-left: 25px;
+            height: 37px;
+            width: 250px;
+            border: 1px black solid;
+            border-radius: 5%;
+            position: relative;
+        }
+
+        span i {
+            position: absolute;
+            z-index: 2;
+            top: 25px;
+            padding-left: 3px;
+        }
+
+        /* Header styling Ends */
+
+
+        main {
+            background-color: rgb(183, 184, 190);
+            min-height: calc(100vh - 40px);
+            padding: 70px 200px 0px 200px;
+            display: grid;
+            grid-template-columns: 1.3fr 3fr 1.7fr;
+            grid-gap: 20px;
+        }
+
+        /* Article styling starts  */
+
+
+        article {
+            display: grid;
+            grid-gap: 5px;
+            height: 550px;
+
+        }
+
+        .col-1>#r1 {
+            height: 310px;
+            width: 100%;
+            border: 1px grey solid;
+            border-radius: 2%;
+            background-color: #FFFFFF;
+        }
+
+        .col-1>#r2 {
+            height: 200px;
+            width: 100%;
+            border: 1px gray solid;
+            border-radius: 2%;
+            background-color: #FFFFFF;
+        }
+
+        .back {
+            background-image: url(https://media.licdn.com/dms/image/C4D12AQHMPBvE3avWzg/article-inline_image-shrink_1000_1488/0/1616872522462?e=1677110400&v=beta&t=4HGdsfpPbWQ8tzmSgNgVoKFZpr1CH8qtXidDu8N9gk0);
+            height: 60px;
+            width: 100%;
+            background-size: 100% 100%;
+            position: relative;
+            border-radius: 3%;
+        }
+
+        .dp>img {
+            height: 80px;
+            width: 80px;
+            outline: 2px rgb(255, 255, 255) solid;
+            border-radius: 50%;
+            position: absolute;
+            top: 40%;
+            left: 33%;
+            box-shadow: 4px 5px 4px rgba(0, 0, 0, 0.532);
+        }
+
+        #r1>.name {
+            text-align: center;
+            margin-top: 70px;
+            font-weight: bolder;
+        }
+
+        .panel {
+            padding-left: 5px;
+            border-top: 1px grey solid;
+            padding-top: 10px;
+            color: black;
+            width: 100%;
+            display: inline-block;
+            text-decoration: none;
+            margin-top: 30px;
+        }
+
+        .view {
+            border-top: 1px slategray solid;
+            padding-left: 5px;
+            padding-top: 10px;
+            color: black;
+            width: 100%;
+            font-size: 15x;
+            display: inline-block;
+            text-decoration: none;
+            margin-top: 15px;
+            opacity: 0.7;
+        }
+
+        #r2>a {
+            display: block;
+            margin: 10px 8px;
+            text-decoration: none;
+            color: black;
+        }
+
+        /* Article stylling Ends */
+
+        /* Section styling starts */
+
+        section {
+            min-height: calc(100vh);
+            display: grid;
+            grid-gap: 15px;
+            margin-bottom: 4px;
+        }
+
+        section .sr1 {
+            height: 130px;
+            width: 100%;
+            border: 1px solid slategray;
+            background-color: #FFFFFF;
+            border-radius: 2%;
+        }
+
+        section .sr2 {
+            height: 500px;
+            width: 100%;
+            border: 1px solid slategray;
+            background-color: #FFFFFF;
+            border-radius: 2%;
+        }
+
+        section .sr3 {
+            height: 790px;
+            width: 100%;
+            border: 1px solid slategray;
+            background-color: #FFFFFF;
+            border-radius: 2%;
+        }
+
+        .thoughts {
+            height: 60px;
+            width: 100%;
+            display: flex;
+        }
+
+        .sr1>.thoughts>img {
+            position: relative;
+            top: 10px;
+            left: 30px;
+            height: 50px;
+            width: 50px;
+            outline: 2px white solid;
+            border-radius: 50%;
+
+        }
+
+        .sr1>.thoughts>.b2 {
+            height: 50px;
+            width: 80%;
+            padding-right: 300px;
+            position: relative;
+            top: 10px;
+            left: 50px;
+            cursor: pointer;
+            border-radius: 12%;
+            background-color: azure;
+        }
+
+        .contents {
+            height: 70px;
+            width: 100%;
+        }
+
+        .sr1>.contents {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            justify-content: space-evenly;
+            align-content: center;
+            padding-left: 20px;
+        }
+
+        /*  */
+        .feed {
+            height: 70px;
+            width: 100%;
+        }
+
+        .sr2 .feed>img {
+            margin-top: 10px;
+            margin-left: 10px;
+            height: 55px;
+            width: 55px;
+            border-radius: 50%;
+        }
+
+        .myntra {
+            height: 80px;
+            width: 180px;
+            margin-left: 80px;
+            margin-top: -60px;
+        }
+
+        .feed>.myntra span {
+            display: block;
+        }
+
+        .post {
+            margin-top: 15px;
+        }
+
+        .post img {
+            height: 350px;
+            width: 100%;
+            border-bottom: 1px solid slategray;
+            border-top: 1px solid slategray;
+        }
+
+        .likes {
+            height: 50px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            justify-content: space-evenly;
+            align-content: center;
+            justify-items: center;
+        }
+
+        .likes #s1 img {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+        }
+
+        .likes #s2 img {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+        }
+
+        .likes #s3 img {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+        }
+
+        .likes #s4 img {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+        }
+
+
+
+        .sr3 .feed2 img {
+            margin-top: 10px;
+            margin-left: 10px;
+            height: 55px;
+            width: 55px;
+            border-radius: 50%;
+        }
+
+        .sr3 .aman {
+            width: 300px;
+            position: relative;
+            left: 88px;
+            top: -60px;
+        }
+
+        .sr3 .post2 {
+            margin-top: 75px;
+        }
+
+        .sr3 .post2 img {
+            height: 350px;
+            width: 100%;
+            border-bottom: 1px solid slategray;
+            border-top: 1px solid slategray;
+            margin-top: 15px;
+        }
+
+        .likes2 {
+            height: 50px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            justify-content: space-evenly;
+            align-content: center;
+            justify-items: center;
+        }
+
+        .likes2 #p1 img {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+        }
+
+        .likes2 #p2 img {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+        }
+
+        .likes2 #p3 img {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+        }
+
+        .likes2 #p4 img {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+        }
+
+
+
+        aside {
+            min-height: 100vh;
+        }
+
+        .news-section {
+            border: 1px solid slategray;
+            background-color: #ffffff;
+            height: 280px;
+            border-radius: 2%;
+        }
+
+        aside .news {
+            margin-top: 15px;
+            margin-left: 30px;
+        }
+
+        aside .news ul a {
+            color: black;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        aside .news ul dd {
+            font-size: small;
+            opacity: 0.7;
+        }
+
+        .suggest {
+            border: 1px solid slategray;
+            background-color: #ffffff;
+            height: 250px;
+            width: 100%;
+            margin-top: 10px;
+            border-radius: 2%;
+        }
+
+        .suggest>.frnd img {
+            height: 30px;
+            width: 30px;
+            margin-left: 5px;
+            margin-top: 10px;
+            border-radius: 50%;
+        }
+
+        footer {
+            background-color: #FFFFFF;
+            height: 40px;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <header>
+        <div class="search">
+            <a href="#" style="display: inline-block;"><i class="fa-brands fa-linkedin" id="icon"></i></a>
+            <span><i class="fa-solid fa-magnifying-glass"></i><input type="text" placeholder="Search"></span>
+        </div>
+
+        <div class="nav">
+            <nav>
+                <ul>
+                    <li> <a href="#"><i class="fa-sharp fa-solid fa-house"></i>
+                            <div style="margin-left:-10px;">Home</div>
+                        </a></li>
+                    <li> <a href="#"><i class="fa-solid fa-user-group"></i>
+                            <div style="margin-left:-34px; ">My Networks</div>
+                        </a></li>
+                    <li> <a href="#"><i class="fa-solid fa-briefcase"></i>
+                            <div style="margin-left: -5px ">Jobs</div>
+                        </a></li>
+                    <li> <a href="#"><i class="fa-regular fa-comment"></i>
+                            <div style="margin-left: -30px">Messaging</div>
+                        </a></li>
+                    <li> <a href="#"><i class="fa-sharp fa-solid fa-bell"></i>
+                            <div style="width:100px; margin-left:-35px; padding-left: -30px;">Notifications</div>
+                        </a></li>
+                    <li> <a href="#">
+                            <div style="padding-top: 2px; "><img
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Elon_Musk_Royal_Society_%28crop2%29.jpg/1200px-Elon_Musk_Royal_Society_%28crop2%29.jpg"
+                                    height="20px" width="20px">
+                                <div style="margin-left: -2px;">Me</div>
+                        </a>
+                    <li> <a href="#"><i class="fa-solid fa-list"></i>
+                            <div style="margin-left:-10px;">Work</div>
+                        </a>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+
+    <main class="container">
+        <article class="col-1">
+            <div id="r1">
+                <div class="back">
+                    <div class="dp">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Elon_Musk_Royal_Society_%28crop2%29.jpg/1200px-Elon_Musk_Royal_Society_%28crop2%29.jpg"
+                            alt="">
+                    </div>
+                </div>
+                <div class="name"> Shriyam Singh</div>
+                <div style="text-align: center; margin-top: 14px; opacity:0.7; line-height: 4px;">Full Stack Developer
+                </div>
+                <a href="#" class="panel"><span>Connections</span><span
+                        style="margin-left:105px; color: blue;">100</span>
+                    <div style="font-size: small; opacity: 0.7;">Grow Your Network</div>
+                </a>
+                <a href="#" class="view">Who viewed your profile <span
+                        style="margin-left: 24px; color: blue;">20</span></a>
+            </div>
+            <div id="r2">
+                <div style="font-size: 12px; margin:20px 8px;">Recent</div>
+                <a href="#" class="group">Groups</a>
+                <a href="#" class="event">Events</a>
+                <a href="#" class="hashtags">Following Hashtags</a>
+                <button style="height: 47px; width: 100%; cursor: pointer; font-size: 18px; opacity: 0.5;">Discover
+                    more</button>
+            </div>
+        </article>
+
+
+
+
+
+
+        <section>
+            <div class="sr1">
+                <div class="thoughts">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Elon_Musk_Royal_Society_%28crop2%29.jpg/1200px-Elon_Musk_Royal_Society_%28crop2%29.jpg"
+                        alt="">
+                    <button class="b2">Start a Post</button>
+                </div>
+                <div class="contents">
+                    <div><span style="position: relative; top: 5px; color: #378FE9;"><svg
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24"
+                                fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
+                                <path
+                                    d="M19 4H5a3 3 0 00-3 3v10a3 3 0 003 3h14a3 3 0 003-3V7a3 3 0 00-3-3zm1 13a1 1 0 01-.29.71L16 14l-2 2-6-6-4 4V7a1 1 0 011-1h14a1 1 0 011 1zm-2-7a2 2 0 11-2-2 2 2 0 012 2z">
+                                </path>
+                            </svg></span>&nbsp; Photo</div>
+                    <div><span style="position: relative; top: 5px; color: #5b9f41;"><svg
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24"
+                                fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
+                                <path
+                                    d="M19 4H5a3 3 0 00-3 3v10a3 3 0 003 3h14a3 3 0 003-3V7a3 3 0 00-3-3zm-9 12V8l6 4z">
+                                </path>
+                            </svg></span>&nbsp;Video</div>
+                    <div><span style="position: relative; top: 5px; color: #c37d16;"><svg
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24"
+                                fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
+                                <path
+                                    d="M3 3v15a3 3 0 003 3h12a3 3 0 003-3V3zm13 1.75A1.25 1.25 0 1114.75 6 1.25 1.25 0 0116 4.75zm-8 0A1.25 1.25 0 116.75 6 1.25 1.25 0 018 4.75zM19 18a1 1 0 01-1 1H6a1 1 0 01-1-1V9h14zm-5.9-3a1 1 0 00-1-1H12a3.12 3.12 0 00-1 .2l-1-.2v-3h3.9v1H11v1.15a3.7 3.7 0 011.05-.15 1.89 1.89 0 012 1.78V15a1.92 1.92 0 01-1.84 2H12a1.88 1.88 0 01-2-1.75 1 1 0 010-.25h1a.89.89 0 001 1h.1a.94.94 0 001-.88z">
+                                </path>
+                            </svg></span>&nbsp;Event</div>
+                    <div><span style="position: relative; top: 5px; color: #e16745;"><svg
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24"
+                                fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
+                                <path
+                                    d="M21 3v2H3V3zm-6 6h6V7h-6zm0 4h6v-2h-6zm0 4h6v-2h-6zM3 21h18v-2H3zM13 7H3v10h10z">
+                                </path>
+                            </svg></span>&nbsp;Write article</div>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="sr2">
+                <div class="feed">
+                    <img src="https://play-lh.googleusercontent.com/wpnNPYIrdHC3Q_bcFXGpwoMvFvvvQnZJHmFKzumq5ZTRZKIzfxURAUGOMqhPhVxnggY"
+                        alt="">
+                    <div class="myntra"><span style="font-weight:bolder">Myntra fashion</span>
+                        <span style="font-weight: lighter; font-size: small; opacity: 0.7;">283783 Followers</span>
+                        <span style="font-weight: lighter; font-size:smaller; opacity: 0.7;">Promoted</span>
+                    </div>
+                    <span style="margin-left:500px;position:absolute; margin-top:-80px; cursor: pointer;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24"
+                            fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
+                            <path
+                                d="M14 12a2 2 0 11-2-2 2 2 0 012 2zM4 10a2 2 0 102 2 2 2 0 00-2-2zm16 0a2 2 0 102 2 2 2 0 00-2-2z">
+                            </path>
+                        </svg>
+                    </span>
+                </div>
+                <div class="post">
+                    <img src="https://mediasamosa.com/wp-content/uploads/2021/04/35.png" alt="">
+                    <div class="likes">
+                        <div id="s1" style="cursor: pointer;"><img
+                                src="https://png.pngtree.com/element_our/png/20181206/like-vector-icon-png_262269.jpg">&nbsp;Likes
+                        </div>
+                        <div id="s2" style="cursor: pointer;"><img
+                                src="https://d33v4339jhl8k0.cloudfront.net/docs/assets/55e7171d90336027d77078f6/images/5a75c4a22c7d3a4a4198c56a/file-Og6PGLfTD5.png">&nbsp;Comment
+                        </div>
+                        <div id="s3" style="cursor: pointer;"><img
+                                src="data:image/png;base64,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">&nbsp;Share
+                        </div>
+                        <div id="s4" style="cursor: pointer;"><img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmujD7L_Pcf7BKG_Rkhh4Ov0cdervd4Ie16g&usqp=CAU">Send
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="sr3">
+                <div class="feed2">
+                    <img src="https://media.licdn.com/dms/image/C5103AQHcmnpwX37ppg/profile-displayphoto-shrink_100_100/0/1535628659967?e=1678320000&amp;v=beta&amp;t=tHkFJN5Y3PEIVHC7YT2GR0VVUHetFQuhKYn7JyV8Psw"
+                        loading="lazy" alt="Aman Gupta" id="ember981"
+                        class="presence-entity__image  ivm-view-attr__img--centered EntityPhoto-circle-3  EntityPhoto-circle-3 lazy-image ember-view">
+                </div>
+                <div class="aman">
+                    <div style="font-weight: bolder;">Aman gupta</div>
+                    <div style="font-size:small; opacity: 0.7;">Co Founder and CMO at boAt Lifestyles( Hiring at all
+                        levels )</div>
+                    <div style="font-size:smaller; opacity: 0.7;">2 months ago</div>
+                </div>
+                <div style="margin-left: 94%; margin-top: -135px; cursor: pointer;"><svg
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24"
+                        fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
+                        <path
+                            d="M14 12a2 2 0 11-2-2 2 2 0 012 2zM4 10a2 2 0 102 2 2 2 0 00-2-2zm16 0a2 2 0 102 2 2 2 0 00-2-2z">
+                        </path>
+                    </svg></div>
+
+                <div class="post2">
+                    <div style="margin-left: 5px;">People who know me, know how many times I've worn this same boAt
+                        t-shirt across the years. Firstly, much like Steve Jobs' strategy - it helps save time. But more
+                        importantly, I used to wear it for branding: put a larger than life logo of boAt and wore it to
+                        malls/ airports etc. It had the best ROI ever, given that I had no budgets to actually advertise
+                        the brand initially.</div>
+
+                    <div style="margin-left: 5px;"><br> Everyone starts with nothing, so did I. It is important to have
+                        an eye for frugality - easily accessible resources with great ROI. I recommend young
+                        entrepreneurs to never shy away from using resources like social media platforms well, like I
+                        used Linkedin; from finding investors to marketing the brand to corporate hiring for boAt
+                        Lifestyle.</div>
+                    <img src="https://teqip.in/wp-content/uploads/2022/11/Photo-by-Aman-Gupta-on-January-22-2022_61ffafd14f1e7-1.png"
+                        alt="">
+                </div>
+                <div class="likes2">
+                    <div id="p1" style="cursor: pointer;"><img
+                            src="https://png.pngtree.com/element_our/png/20181206/like-vector-icon-png_262269.jpg">&nbsp;Likes
+                    </div>
+                    <div id="p2" style="cursor: pointer;"><img
+                            src="https://d33v4339jhl8k0.cloudfront.net/docs/assets/55e7171d90336027d77078f6/images/5a75c4a22c7d3a4a4198c56a/file-Og6PGLfTD5.png">&nbsp;Comment
+                    </div>
+                    <div id="p3" style="cursor: pointer;"><img
+                            src="data:image/png;base64,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">&nbsp;Share
+                    </div>
+                    <div id="p4" style="cursor: pointer;"><img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmujD7L_Pcf7BKG_Rkhh4Ov0cdervd4Ie16g&usqp=CAU">Send
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+        <aside>
+            <div class="news-section">
+                <div>
+                    <h2 style="width: 100%; margin-left: 4px; margin-top: 4px;">LinkedIn News<span
+                            style="margin-left:110px; cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" class="mercado-match"
+                                width="16" height="16" focusable="false">
+                                <path
+                                    d="M12 2H4a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2zm-3 8v2H7.5A1.5 1.5 0 016 10.5a1.56 1.56 0 01.1-.5l1.08-3h2.13l-1.09 3zm0-3.75A1.25 1.25 0 1110.25 5 1.25 1.25 0 019 6.25z">
+                                </path>
+                            </svg></span></h2>
+                </div>
+
+                <div class="news">
+                    <ul>
+                        <a href="#">
+                            <li> Skills first hiring the way to go ?</li>
+                        </a>
+                        <dd>2h ago</dd>
+                        <a href="#">
+                            <li>The impact of global recession</li>
+                        </a>
+                        <dd>2h ago</dd>
+                        <a href="#">
+                            <li>Blockchain for citizen services ?</li>
+                        </a>
+                        <dd>3h ago</dd>
+                        <a href="#">
+                            <li>What's your big Idea for 2023 ?</li>
+                        </a>
+                        <dd>4h ago</dd>
+                        <a href="#">
+                            <li>What is next for India's Fintech Industry ?</li>
+                        </a>
+                        <dd>5h ago</dd>
+                    </ul>
+                </div>
+            </div>
+            <div class="suggest">
+                <div>
+                    <h2 style="width: 100%; margin-left: 4px; margin-top: 4px;">Add to your feed<span
+                            style="margin-left:82px; cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" class="mercado-match"
+                                width="16" height="16" focusable="false">
+                                <path
+                                    d="M12 2H4a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2zm-3 8v2H7.5A1.5 1.5 0 016 10.5a1.56 1.56 0 01.1-.5l1.08-3h2.13l-1.09 3zm0-3.75A1.25 1.25 0 1110.25 5 1.25 1.25 0 019 6.25z">
+                                </path>
+                            </svg></span></h2>
+                </div>
+                <div class="frnd" style="margin-top: 4px;">
+                    <img src="https://m.economictimes.com/thumb/msid-89021695,width-1200,height-900,resizemode-4,imgsize-49476/unilever.jpg"
+                        alt="">
+                    <div style="margin-left: 50px; margin-top: -35px;">
+                        <div style="font-weight: bold;">Unilever</div>
+                        <div style="opacity: 0.7;">Company and Consumer</div>
+                    </div>
+                    <button
+                        style="margin-left: 50px;margin-top: 5px; width: 200px; height: 30px; cursor: pointer; border-radius: 5%;">+follow</button>
+                </div>
+                <div class="frnd">
+                    <img src="https://cdn3.iconfinder.com/data/icons/popular-services-brands-vol-2/512/tesla-512.png"
+                        alt="">
+                    <div style="margin-left: 50px; margin-top: -35px;">
+                        <div style="font-weight: bold;">Tesla</div>
+                        <div style="opacity: 0.7;">Car manufacturing company</div>
+                    </div>
+                    <button
+                        style="margin-left: 50px;margin-top: 5px; width: 200px; height: 30px; cursor: pointer; border-radius: 5%;">+follow</button>
+                </div>
+
+            </div>
+
+        </aside>
+    </main>
+    <footer>
+    </footer>
+
+
+</body>
+
+</html>
